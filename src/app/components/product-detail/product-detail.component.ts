@@ -14,6 +14,7 @@ import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
 import { appShellRender } from "../../directives/app-shell-render.directive";
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { appShellNoRender } from "../../directives/app-shell-no-render.directive";
 
 @Component({
   selector: 'app-product-detail',
@@ -29,7 +30,8 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
     MatIcon,
     MatProgressSpinner,
     RouterLink,
-    appShellRender
+    appShellRender,
+    appShellNoRender
 ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
