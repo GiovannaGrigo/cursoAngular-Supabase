@@ -1,18 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { Product } from '../../interfaces/product';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductService } from '../../services/product.service';
 import { Observable } from 'rxjs';
+import { appShellRender } from '../../directives/app-shell-render.directive';
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
   imports: [
     CommonModule,
-    ProductCardComponent
-  ],
+    ProductCardComponent,
+    MatProgressSpinnerModule,
+    appShellRender
+],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })
