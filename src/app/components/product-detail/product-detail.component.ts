@@ -18,24 +18,23 @@ import { appShellNoRender } from "../../directives/app-shell-no-render.directive
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-product-detail',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatIcon,
-    MatProgressSpinner,
-    RouterLink,
-    appShellRender,
-    appShellNoRender
-  ],
-  templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.css'
+    selector: 'app-product-detail',
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatIcon,
+        MatProgressSpinner,
+        RouterLink,
+        appShellRender,
+        appShellNoRender
+    ],
+    templateUrl: './product-detail.component.html',
+    styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent implements OnInit {
   quantities: number[] = [1, 2, 3, 4, 5];

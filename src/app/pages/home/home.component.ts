@@ -4,11 +4,10 @@ import { ProductsListComponent } from '../../components/products-list/products-l
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [ProductsListComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [ProductsListComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   private readonly title = inject(Title);
