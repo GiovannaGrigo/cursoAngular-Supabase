@@ -42,7 +42,8 @@ export class CartService {
         .upsert({
           product_id: cartItem.product.id,
           quantity: cartItem.quantity
-        })
+        },
+        { onConflict: 'product_id' })
         .then(({ error }) => {
           if (error) throw new Error(error.message)
         })
