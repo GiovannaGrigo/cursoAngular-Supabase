@@ -66,9 +66,14 @@ export class CartService {
     return this.cartItemsSubject.getValue();
   }
 
+  private findItemIndexByProductId(productId: number) {
+    const currentItems = this.getCurrentItems();
+    return currentItems.findIndex((item) => item.product.id === productId)
+  }
+
   addToCart(product: Product, quantity: number = 1) {
     const currentItems = this.getCurrentItems();
-    const itemIndex = currentItems.findIndex((item) => item.product.id === product.id)
+    const itemIndex = this.findItemIndexByProductId(product.id)
 
     if (itemIndex >= 0) {
       currentItems[itemIndex].quantity += quantity
@@ -82,7 +87,7 @@ export class CartService {
 
   updatCartItem(productId: number, quantity: number) {
     const currentItems = this.getCurrentItems();
-    const itemIndex = currentItems.findIndex((item) => item.product.id === productId)
+    const itemIndex = this.findItemIndexByProductId(productId)
 
     if (itemIndex >= 0) {
       currentItems[itemIndex].quantity = quantity

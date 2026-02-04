@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CartItem } from '../../interfaces/cart_item';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 
 
@@ -33,12 +33,14 @@ export class CartComponent implements OnInit {
   total: number = 0;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items
+      this.calculateTotal()
     })
   }
 
@@ -55,7 +57,15 @@ export class CartComponent implements OnInit {
     this.cartService.removeFromCart(productId)
   }
 
-  finalizePurchase() { }
+  finalizePurchase() {
+    alert('Compra finalizada!')
+  }
 
-  continueShopping() { }
+  continueShopping() {
+    this.router.navigate(['/'])
+  }
+
+  calculateTotal() {
+    this.total = this.cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0)
+  }
 }
