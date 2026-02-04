@@ -47,7 +47,9 @@ export class CartComponent implements OnInit {
     return Array.from({ length: maxQuantity }, (_, i) => i + 1);
   }
 
-  updateQuantity(productId: number, newQuantity: number) { }
+  updateQuantity(productId: number, newQuantity: number) {
+    this.cartService.updatCartItem(productId, newQuantity)
+  }
 
   removeItem(productId: number) {
     this.cartService.removeFromCart(productId)
