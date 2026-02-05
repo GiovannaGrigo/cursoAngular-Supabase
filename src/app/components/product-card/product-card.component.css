@@ -58,3 +58,11 @@
   }
 }
 
+::ng-deep .success-snackbar .mdc-snackbar__surface {
+  background-color: #3F51B5 !important;
+}
+
+::ng-deep .success-snackbar .mdc-snackbar__label {
+  color: white !important;
+}
+

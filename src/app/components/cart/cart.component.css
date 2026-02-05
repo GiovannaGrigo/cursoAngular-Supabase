@@ -149,3 +149,11 @@ button[mat-stroked-button] {
   line-height: 32px;
   letter-spacing: 0.25px;
 }
+
+::ng-deep .success-snackbar .mdc-snackbar__surface {
+  background-color: #3F51B5 !important;
+}
+
+::ng-deep .success-snackbar .mdc-snackbar__label {
+  color: white !important;
+}

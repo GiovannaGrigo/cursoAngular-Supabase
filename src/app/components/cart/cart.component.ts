@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CartItem } from '../../interfaces/cart_item';
 import { Router, RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -34,7 +35,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +60,10 @@ export class CartComponent implements OnInit {
   }
 
   finalizePurchase() {
-    alert('Compra finalizada!')
+    this.snackBar.open('Compra finalizada!', 'Fechar', {
+      duration: 3000,
+      panelClass: ['success-snackbar']
+    });
   }
 
   continueShopping() {
