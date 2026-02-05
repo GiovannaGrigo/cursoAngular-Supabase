@@ -38,3 +38,13 @@ mat-icon {
   font-size: 12px;
   font-weight: bold;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.toolbar-buttons {
+  display: flex;
+  align-items: center;
+}
